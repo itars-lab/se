@@ -11,6 +11,16 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/**
+*.iml
+
+allure-results/**
+
+#Eclipse generated files
+.settings/**
+.project
+.classpath
+target/**
 
 # Generated files
 .idea/**/contentModel.xml
