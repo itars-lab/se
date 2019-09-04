@@ -13,7 +13,7 @@ public class BaseTest {
 
     @BeforeAll
     public static void setUpEnv() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Repositories\\se\\target\\binaries\\windows\\googlechrome\\64bit\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Selenium-training\\chromedriver.exe");
     }
 
     @BeforeEach
