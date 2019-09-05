@@ -5,19 +5,25 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pl.qa.selenium.pages.LoadingPage;
+import pl.qa.selenium.pages.LoadingPagePf;
 
 import java.util.regex.Pattern;
 
 public class LandingPageTest extends BaseTest {
 
     private LoadingPage page;
+    private LoadingPagePf pageInitializedByPageFactory;
 
     @BeforeEach
     public void setup() {
         super.setup();
         page = new LoadingPage(driver);
+//        LoadingPagePf p = new LoadingPagePf(driver);
+//        PageFactory.initElements(driver, p);
+        pageInitializedByPageFactory = PageFactory.initElements(driver, LoadingPagePf.class);
     }
 
     @Test
@@ -30,7 +36,12 @@ public class LandingPageTest extends BaseTest {
     @Test
     public void searchTestCmeGroup() throws InterruptedException {
         page.search("test cme selenium");
-        page.find(By.cssSelector("sdjahsjkdhasd"));
+        Assertions.assertEquals(page.getTitle(), "CME group");
+    }
+
+    @Test
+    public void searchTestCmeGroupPageFactory() throws InterruptedException {
+        pageInitializedByPageFactory.search("test cme selenium");
         Assertions.assertEquals(page.getTitle(), "CME group");
     }
 
