@@ -1,7 +1,7 @@
-package pl.qa.selenium.jdbc.model;
+package pl.qa.selenium.data.jdbc.model;
 
-import pl.qa.selenium.jdbc.dbconnection.DBConnection;
-import pl.qa.selenium.jdbc.dto.PersonDTO;
+import pl.qa.selenium.data.jdbc.dbconnection.DBConnection;
+import pl.qa.selenium.data.jdbc.dto.PersonDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,7 +25,8 @@ public class Person {
 
 	public List<PersonDTO> getAllPersons() {
 		Connection conn = DBConnection.getConnection();
-		try (Statement statement = conn.createStatement(); ResultSet rs = statement.executeQuery("SELECT * FROM person");) {
+		try (Statement statement = conn.createStatement();
+			 ResultSet rs = statement.executeQuery("SELECT * FROM person");) {
 			return mapPersonTableToDTO(rs);
 		} catch (SQLException e) {
 			e.printStackTrace();

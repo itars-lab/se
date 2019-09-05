@@ -1,4 +1,4 @@
-package pl.qa.selenium.jdbc.dbconnection;
+package pl.qa.selenium.data.jdbc.dbconnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,7 +18,8 @@ public class DBConnection {
 			synchronized (DBConnection.class) {
 				if (connection == null) {
 					try {
-						connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jcert1", "postgres", "postgre");
+						connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jcert1",
+								"postgres", "postgre");
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}

@@ -11,4 +11,6 @@ public interface UserRepository { //extends JpaRepository<User, Long> {
     List<User> findByFirstName(String firstName);
 
     List<User> findBySureName(String sureName);
+
+    List<User> findByAge(int age);
 }

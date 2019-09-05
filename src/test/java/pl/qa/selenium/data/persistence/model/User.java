@@ -17,6 +17,8 @@ public class User {
 //    @Column
     private String sureName;
 
+    private int age;
+
     public long getId() {
         return id;
     }

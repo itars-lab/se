@@ -1,8 +1,8 @@
-package pl.qa.selenium.jdbc;
+package pl.qa.selenium.data.jdbc;
 
 
-import pl.qa.selenium.jdbc.dto.PersonDTO;
-import pl.qa.selenium.jdbc.model.Person;
+import pl.qa.selenium.data.jdbc.dto.PersonDTO;
+import pl.qa.selenium.data.jdbc.model.Person;
 
 import java.util.List;
 
